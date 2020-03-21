@@ -2,4 +2,5 @@
 #include "doctest.h"
 #include "PhoneticFinder.hpp"
 
-TEST_CASE("testing find") {}
+TEST_CASE("testing find") {
+}
