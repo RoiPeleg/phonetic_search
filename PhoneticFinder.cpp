@@ -1,3 +1,8 @@
+/**
+ * phonetic search function
+ * AUTHOR: RoiPeleg
+ * */
+
 #include "PhoneticFinder.hpp"
 using namespace phonetic;
 namespace phonetic{

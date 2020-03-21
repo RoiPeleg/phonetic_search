@@ -1,11 +1,13 @@
-
+/**
+ * unit test to phonetic search
+ * AUTHOR: RoiPeleg
+ * */
 #include "doctest.h"
 #include "PhoneticFinder.hpp"
 using namespace phonetic;
 
 #include <string>
 using namespace std;
-
 
 
 TEST_CASE("Test replacement of v and w") {
@@ -51,14 +53,24 @@ TEST_CASE("Test replacement of o and u") {
     string text = "oak out ooa";
     CHECK(find(text, "oak") == string("oak"));
     CHECK(find(text, "uak") == string("oak"));
+    CHECK(find(text, "out") == string("out"));
+    CHECK(find(text, "uut") == string("out"));
+    CHECK(find(text, "oot") == string("out"));
 }
 
 TEST_CASE("Test replacement of i and y") {
-    string text = "island you";
-    CHECK(find(text, "island") == string("island"));
+    string text = "island you young imp yoyo";
+     (find(text, "island") == string("island"));
     CHECK(find(text, "ysland") == string("island"));
     CHECK(find(text, "you") == string("you"));        
     CHECK(find(text, "iou") == string("you"));
+    CHECK(find(text, "imp") == string("imp"));
+    CHECK(find(text, "ymp") == string("imp"));
+    CHECK(find(text, "young") == string("young"));
+    CHECK(find(text, "ioung") == string("young"));
+    CHECK(find(text, "yoyo") == string("yoyo"));
+    CHECK(find(text, "ioyo") == string("yoyo"));
+    CHECK(find(text, "yoio") == string("yoyo"));
 }
 
 TEST_CASE("Test replacement of lowercase letters and uppercase letters") {
