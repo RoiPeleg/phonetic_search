@@ -62,7 +62,7 @@ TEST_CASE("Test replacement of c , k and q")
     CHECK(find(text, "sql") == string("sql"));
     CHECK(find(text, "skl") == string("sql"));
     CHECK(find(text, "scl") == string("sql"));
-    CHECK(find(text, "qcl") == string("sql"));
+    CHECK(find(text, "scl") == string("sql"));
     CHECK(find(text, "zql") == string("sql"));
     CHECK(find(text, "clocq") == string("clock"));
     CHECK(find(text, "clokk") == string("clock"));
@@ -89,6 +89,7 @@ TEST_CASE("Test replacement of s and z")
 TEST_CASE("Test replacement of d and t")
 {
     string text = "dude tt tree bullet gotta get out";
+     CHECK(find(text, "dd") == string("tt"));
     CHECK(find(text, "dude") == string("dude"));
     CHECK(find(text, "tute") == string("dude"));
     CHECK(find(text, "dute") == string("dude"));
