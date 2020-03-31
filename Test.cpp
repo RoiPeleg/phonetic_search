@@ -63,9 +63,9 @@ TEST_CASE("Test replacement of c , k and q")
     CHECK(find(text, "skl") == string("sql"));
     CHECK(find(text, "scl") == string("sql"));
     CHECK(find(text, "qcl") == string("sql"));
-    CHECK(find(text, "ksl") == string("sql"));
-    CHECK(find(text, "slock") == string("clock"));
-    CHECK(find(text, "closk") == string("clock"));
+    CHECK(find(text, "zql") == string("sql"));
+    CHECK(find(text, "clocq") == string("clock"));
+    CHECK(find(text, "clokk") == string("clock"));
     CHECK(find(text, "qlock") == string("clock"));
     CHECK(find(text, "qloqk") == string("clock"));
 }
@@ -138,14 +138,14 @@ TEST_CASE("Test replacement of i and y")
 
 TEST_CASE("Test replacement of lowercase letters and uppercase letters")
 {
-    string text = "Bob is a Lawyer";
+    string text = "Bob is a lawyer";
     CHECK(find(text, "Bob") == string("Bob"));
     CHECK(find(text, "BoB") == string("Bob"));
     CHECK(find(text, "bob") == string("Bob"));
     CHECK(find(text, "boB") == string("Bob"));
     CHECK(find(text, "laWyer") == string("lawyer"));
     CHECK(find(text, "laWYer") == string("lawyer"));
-    CHECK(find(text, "LWAYER") == string("lawyer"));
+    CHECK(find(text, "LAWYER") == string("lawyer"));
     CHECK(find(text, "lawyER") == string("lawyer"));
     CHECK(find(text, "LAWYEr") == string("lawyer"));
     CHECK(find(text, "IS") == string("is"));

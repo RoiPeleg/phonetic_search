@@ -5,19 +5,20 @@
  */
 
 #include "PhoneticFinder.hpp"
+
 #include <iostream>
 #include <stdexcept>
 using namespace std;
 
 int main() {
-	string text = "Dond vorri be haffy";
+	string text = "Dond vorri be haffy lawyer";
 	cout << phonetic::find(text, "dont") << endl;   // should print "Dond"
 	cout << phonetic::find(text, "worry") << endl;   // should print "vorri"
 	cout << phonetic::find(text, "Be") << endl;   // should print "be"
 	cout << phonetic::find(text, "happy") << endl;   // should print "haffy"
 	try {
 		cout << phonetic::find(text, "happ") << endl;   // should throw an exception - "happ" is not a full word in the sentence
-	} catch (exception ex) {
+	} catch (exception& ex) {
 	 	cout << "   caught exception: " << ex.what() << endl;  // should print "Did not find the word 'happ' in the text"
 	}
 }
