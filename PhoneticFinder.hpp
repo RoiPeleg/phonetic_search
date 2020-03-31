@@ -5,16 +5,16 @@ namespace phonetic{
 class noWordExp : public exception
 {
     private:
-    string notfound;
+    string error;
     public:
-    noWordExp(string word){notfound = word;}
+    noWordExp(string s){
+        error = "Did not find the word '";
+        error.append(s);
+        error.append("' in the text");
+    }
     const char * what () const throw ()
     {
-        string s = "Did not find the word '";
-        //s.append(notfound);
-        s.append("' in the text");
-        //cout << s << endl;
-        return s.c_str();
+        return error.c_str();
     }
     
 };

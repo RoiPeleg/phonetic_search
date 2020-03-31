@@ -69,7 +69,7 @@ namespace phonetic{
 
 
          if(!found){//will thorw exption 
-             throw new noWordExp(word);
+             throw noWordExp(word);
          }
          
         return temp;
