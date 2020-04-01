@@ -1,7 +1,9 @@
+#pragma once
 #include <stdexcept>
 #include <iostream>
 using namespace std;
 namespace phonetic{
+// custom exception for not finding the given word in text
 class noWordExp : public exception
 {
     private:

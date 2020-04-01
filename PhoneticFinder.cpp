@@ -42,14 +42,13 @@ namespace phonetic{
     //gets a string and word to search in if the word(or simllar one) is found returns it.
      string find(string text,string word){
          string temp;
-         int start = 0;
+         int start = 0;//will hold the index of the last word in the text
          bool found = false,stopw = false;
-         if(word.length() == 0)throw noWordExp("empty word");
          //jumps over spaces at the begining if exists.
          while(text[start]==' ' && start < text.length())start++;
 
 
-         for(size_t i=start;i<text.length() && !found;i++){
+         for(size_t i=start;i<text.length() && !found;i++){//runs over the text and splits it to sub strings by spces or end of text 
              
              if(text[i]==' ' || i == text.length()-1){
                  if(i==text.length()-1 && text[i]!=' '){//substr cuts the last character otherwise
@@ -73,7 +72,7 @@ namespace phonetic{
          }
 
 
-         if(!found){//will thorw exption 
+         if(!found){//will thorw exption if the given word does'nt exist in the text
              throw noWordExp(word);
          }
          
